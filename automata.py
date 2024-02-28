@@ -1,12 +1,17 @@
 class Language:
     def __init__(self):
         self.alphabet = []
-        self.size = 0
 
     def add(self, symbol):
         if symbol not in self.alphabet:
             self.alphabet.append(symbol)
-            self.size += 1
+
+    @staticmethod
+    def _canonical_sort(s):
+        return (len(s) if s != "λ" else -1), s
+
+    def _sort_strings(self, strings):
+        return sorted(strings, key=self._canonical_sort)
 
     def _generate_string(self, string, letter, length, strings):
 
@@ -21,21 +26,23 @@ class Language:
 
         return strings
 
-    def _flatten_list(self, list):
+    @staticmethod
+    def _flatten_strings(strings):
 
-        new_list = []
-        for row in list:
-            new_list.extend(row)
+        new_strings = []
+        for row in strings:
+            new_strings.extend(row)
 
-        return new_list
+        return new_strings
 
     def generate_strings(self, length):
 
-        strings = []
+        strings = ["λ"]
         for i in range(len(self.alphabet)):
             strings.append(self._generate_string("", self.alphabet[i], length, []))
 
-        strings = self._flatten_list(strings)
+        strings = self._flatten_strings(strings)
+        strings = self._sort_strings(strings)
 
         return strings
 
