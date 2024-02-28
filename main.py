@@ -1,5 +1,13 @@
-def main(name):
-    pass
+from automata import *
 
-if __name__ == '__main__':
+def main():
+    my_language = Language()
+    my_language.add("a")
+    my_language.add("b")
+    my_language.add("c")
+
+    print(my_language.alphabet)
+    print(my_language.generate_strings(5))
+
+if __name__ == "__main__":
     main()
