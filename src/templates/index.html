@@ -9,12 +9,18 @@
         <h1>Introduction to the Theory of Computing</h1>
         <div id="formalLang">
             <h1>Formal Language</h1>
-            <form id="alphabetForm" action="#">
-                <label for="formalLang">Alphabet:</label>
-                <input type="text" name="alphabet" id="alphabetInput" placeholder="e.g., a,b,c,d">
-                <button type="button" onclick="setAlphabet()">Test</button>
+            <form id="setAlphabetForm" action="#">
+                <label for="setAlphabetForm">Set Alphabet:</label>
+                <input type="text" name="alphabet" id="alphabetInput" placeholder="(values seperated by commas) e.g., a,b,c,d">
+                <button type="button" onclick="setAlphabet()">Set</button>
             </form>
-            <div id="result"></div>
+            <div id="result1"></div>
+            <form id="generateStringForm" action="#">
+                <label for="generateStringForm">Generate Strings:</label>
+                <input type="text" name="length" id="stringLength" placeholder="(length of string) e.g., 4">
+                <button type="button" onclick="generateStrings('stringLength')">Set</button>
+            </form>
+            <div id="result2"></div>
         </div>
         <div id="sub-header">
             <p>

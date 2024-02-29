@@ -1,6 +1,9 @@
 class FormalLanguage:
-    def __init__(self):
-        self.alphabet = []
+    def __init__(self, alphabet=None):
+        if alphabet is None:
+            self.alphabet = []
+        else:
+            self.alphabet = alphabet.split(",")
 
     def add(self, symbol):
         if symbol not in self.alphabet:

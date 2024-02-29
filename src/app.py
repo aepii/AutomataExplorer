@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from classes.language import FormalLanguage
   
 app = Flask(__name__) 
   
@@ -9,14 +10,31 @@ def home():
     )
 
 @app.route('/', methods=['POST'])
-def test_alphabet():
-    alphabet = request.form.get('alphabet')
+def create_language():
+    data = request.form
+    global language
 
-    # Process the data (you can replace this with your logic)
-    result = f"Received alphabet: {alphabet}"
+    if 'alphabet' in data:
 
-    # Send the result back to the front-end
-    return jsonify({'result': result})
+        alphabet = request.form.get('alphabet')
+        
+        language = FormalLanguage(alphabet)
+
+        result = f"Formal Language's Alphabet: {alphabet}"
+
+        # Send the result back to the front-end
+        return jsonify({'result': result})
+
+    elif 'length' in data:
+
+        length = int(request.form.get('length'))
+
+        strings = language.generate_strings(length)
+
+        result = f"Strings: {strings}"
+
+        # Send the result back to the front-end
+        return jsonify({'result': result})
 
 if __name__ == "__main__":
     app.run(debug=True)
