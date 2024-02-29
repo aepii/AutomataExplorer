@@ -22,7 +22,6 @@ def create_language():
 
         result = f"Formal Language's Alphabet: {alphabet}"
 
-        # Send the result back to the front-end
         return jsonify({'result': result})
 
     elif 'length' in data:
@@ -33,7 +32,6 @@ def create_language():
 
         result = f"Strings: {strings}"
 
-        # Send the result back to the front-end
         return jsonify({'result': result})
 
 if __name__ == "__main__":

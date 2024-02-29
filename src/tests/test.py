@@ -1,7 +1,6 @@
 from classes.language import FormalLanguage
 from classes.automata import State, Automata
 
-
 def main():
     print("Formal Language Test: ")
     my_language = FormalLanguage()

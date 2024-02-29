@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>FiniteAutomata</title>    
-    </head>
-    
-    <body>
-        <h1>Introduction to the Theory of Computing</h1>
-        <div id="formalLang">
-            <h1>Formal Language</h1>
-            <form id="setAlphabetForm" action="#">
-                <label for="setAlphabetForm">Set Alphabet:</label>
-                <input type="text" name="alphabet" id="alphabetInput" placeholder="(values seperated by commas) e.g., a,b,c,d">
-                <button type="button" onclick="setAlphabet()">Set</button>
-            </form>
-            <div id="result1"></div>
-            <form id="generateStringForm" action="#">
-                <label for="generateStringForm">Generate Strings:</label>
-                <input type="text" name="length" id="stringLength" placeholder="(length of string) e.g., 4">
-                <button type="button" onclick="generateStrings('stringLength')">Set</button>
-            </form>
-            <div id="result2"></div>
-        </div>
-        <div id="sub-header">
-            <p>
-              <a href="https://www.linkedin.com/in/mario-simental-66747620a/" target="_blank">LinkedIn</a>
-              <a href="https://github.com/aepii" target="_blank">GitHub</a>
-            </p>
-          </div>
-          <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-          <script src="static/js/alphabet.js"></script>
-    </body>
-</html>
 
+<head>
+    <meta charset="utf-8">
+    <title>Theory of Computing</title>
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <h1>Theory of Computing</h1>
+    <button id="toggleFormalLang" onclick="toggleFormalLang()">Toggle Formal Language</button>
+    <div id="formalLang" style="display: none;">
+        <h1>Formal Language</h1>
+        <form id="setAlphabetForm" action="#">
+            <label for="setAlphabetForm">Set Alphabet:</label>
+            <input type="text" name="alphabet" id="alphabetInput"
+                placeholder="(values seperated by commas) e.g.: a,b,c,d">
+            <button type="button" onclick="setAlphabet()">Set</button>
+        </form>
+        <div id="alphabetResult"></div>
+        <form id="generateStringForm" action="#">
+            <label for="generateStringForm">Generate Strings:</label>
+            <input type="text" name="length" id="stringLength" placeholder="(length of string) e.g.: 4">
+            <button type="button" onclick="generateStrings('stringLength')">Set</button>
+        </form>
+        <div id="stringGenerationResult"></div>
+    </div>
+    <div id="sub-header">
+        <p>
+            <span class="name">Mario Simental</span>
+            <a href="https://www.linkedin.com/in/mario-simental-66747620a/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/aepii" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        </p>
+    </div>    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="static/js/scripts.js"></script>
+</body>
+
+</html>
