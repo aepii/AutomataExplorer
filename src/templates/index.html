@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-<html>
-    <header>
-        <title>
-            
-        </title>
-    </header>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>FiniteAutomata</title>    
+    </head>
     
     <body>
-        <div id="buttons">
-            <button>Test</button>
+        <h1>Introduction to the Theory of Computing</h1>
+        <div id="formalLang">
+            <h1>Formal Language</h1>
+            <form id="alphabetForm" action="#">
+                <label for="formalLang">Alphabet:</label>
+                <input type="text" name="alphabet" id="alphabetInput" placeholder="e.g., a,b,c,d">
+                <button type="button" onclick="setAlphabet()">Test</button>
+            </form>
+            <div id="result"></div>
         </div>
+        <div id="sub-header">
+            <p>
+              <a href="https://www.linkedin.com/in/mario-simental-66747620a/" target="_blank">LinkedIn</a>
+              <a href="https://github.com/aepii" target="_blank">GitHub</a>
+            </p>
+          </div>
+          <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+          <script src="static/js/alphabet.js"></script>
     </body>
 </html>
+
